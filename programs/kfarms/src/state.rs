@@ -81,7 +81,7 @@ pub struct FarmState {
 
     pub is_farm_delegated: u8,
 
-    pub _padding0: [u8; 5],
+    pub padding0: [u8; 5],
 
     pub withdraw_authority: Pubkey,
 
@@ -110,7 +110,7 @@ pub struct FarmState {
 
     pub pending_farm_admin: Pubkey,
     pub strategy_id: Pubkey,
-    pub _padding: [u64; 86],
+    pub padding: [u64; 86],
 }
 
 impl FarmState {
@@ -194,7 +194,7 @@ impl Default for FarmState {
             is_farm_frozen: 0,
             is_farm_delegated: 0,
 
-            _padding0: [0; 5],
+            padding0: [0; 5],
 
             withdraw_authority: Pubkey::default(),
 
@@ -223,7 +223,7 @@ impl Default for FarmState {
             pending_farm_admin: Pubkey::default(),
             strategy_id: Pubkey::default(),
 
-            _padding: [0; 86],
+            padding: [0; 86],
         }
     }
 }
@@ -401,7 +401,7 @@ pub struct UserState {
     pub owner: Pubkey,
 
     pub is_farm_delegated: u8,
-    pub _padding_0: [u8; 7],
+    pub padding_0: [u8; 7],
 
     pub rewards_tally_scaled: [u128; MAX_REWARDS_TOKENS],
     pub rewards_issued_unclaimed: [u64; MAX_REWARDS_TOKENS],
@@ -419,7 +419,7 @@ pub struct UserState {
 
     pub last_stake_ts: u64,
 
-    pub _padding_1: [u64; 50],
+    pub padding_1: [u64; 50],
 }
 
 impl UserState {
@@ -464,7 +464,7 @@ impl Default for UserState {
             owner: Pubkey::default(),
 
             is_farm_delegated: false as u8,
-            _padding_0: Default::default(),
+            padding_0: Default::default(),
 
             rewards_tally_scaled: [0; MAX_REWARDS_TOKENS],
             rewards_issued_unclaimed: [0; MAX_REWARDS_TOKENS],
@@ -478,7 +478,7 @@ impl Default for UserState {
             bump: 0,
             delegatee: Pubkey::default(),
             last_stake_ts: 0,
-            _padding_1: [0; 50],
+            padding_1: [0; 50],
         }
     }
 }
